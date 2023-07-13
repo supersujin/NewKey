@@ -27,7 +27,7 @@ print(news['title_content'])
 stopwords = ['의','가','이','은','들','는','다소','잘','과','도','를','을','으로','에','와','하다','것','이지','대해','에서','되다','있다','하지만','정말','라면','일단','그렇게','이제']
 
 # 토큰화
-okt = Okt()
+okt = Okt() #한국어 맞춤
 news['token'] = news['title_content'].apply(lambda x: ' '.join([word for word in okt.morphs(x, stem=True) if not word in stopwords]))
 cv=CountVectorizer(max_features=1000)
 vectors=cv.fit_transform(news['token']).toarray()
