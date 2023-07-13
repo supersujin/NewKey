@@ -12,7 +12,6 @@ path='s3://newkeybucket/news.csv'
 news=pd.read_csv(path)
 
 #'title' 컬럼에서 '-'를 기준으로 분할하여 뒷부분을 'press' 컬럼에 저장
-#'title' 컬럼이 
 news['press'] = news['title'].str.split('-').str[-1].str.strip()
 news['title'] = news['title'].str.split('-').str[0].str.strip()
 news['title_content']=news['title']+news['content']

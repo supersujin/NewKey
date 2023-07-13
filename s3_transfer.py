@@ -24,7 +24,7 @@ def fetch_top_news():
     news_list = sp_page.find_all('item')
 
     while True:
-        display_news(news_list,20)
+        display_news(news_list,20) #20개 가져옴
         time.sleep(4000000) #반나절
 
 def display_news(list_of_news, news_quantity):
