@@ -6,7 +6,7 @@ from konlpy.tag import Okt
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-#다른 팀원들은 s3 접근 권한 없어 오류날 것이므로 이 코드 주석 처리 후 news.csv파일 따로 가져오기
+#다른 팀원들은 s3 접근 권한 없어 오류나므로 이 코드 주석 처리 후 news.csv파일 따로 가져오기
 client=boto3.client('s3')
 path='s3://newkeybucket/news.csv'
 news=pd.read_csv(path)

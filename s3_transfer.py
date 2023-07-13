@@ -12,7 +12,7 @@ nltk.download('punkt')
 
 s3 = boto3.resource('s3')
 bucket_name = 'newkeybucket'  # S3 버킷 이름
-object_name = 'news.csv'  # S3에 업로드될 CSV 파일 이름
+object_name = 'news.csv'  # S3에 업로드 될 CSV 파일 이름
 newsId=0
 
 def fetch_top_news():
