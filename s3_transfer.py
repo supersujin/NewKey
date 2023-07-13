@@ -15,6 +15,7 @@ bucket_name = 'newkeybucket'  # S3 버킷 이름
 object_name = 'news.csv'  # S3에 업로드 될 CSV 파일 이름
 newsId=0
 
+#뉴스 크롤링
 def fetch_top_news():
     site = 'https://news.google.com/rss?hl=ko&gl=KR&ceid=KR:ko'
     op = urlopen(site)
