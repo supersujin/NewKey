@@ -6,10 +6,12 @@
     android:orientation="vertical"
     tools:context=".CatEntertainmentFragment" >
 
-    <TextView
-        android:id="@+id/textView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="395dp"
-        android:text="\n\n\n\n\nentertainment"
-        android:textSize="50dp" />
+        android:layout_height="710dp"
+        android:layout_marginTop="10dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 </LinearLayout>

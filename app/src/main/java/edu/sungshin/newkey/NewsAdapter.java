@@ -82,9 +82,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> params = new HashMap<>();
                         //flask 서버로 전달할 데이터
-                        params.put("user","1"); //로그인 아이디로 바꾸기
-                        params.put("title",item.getTitle());
-                        params.put("click","true");
+                        params.put("user_id","1"); //로그인 아이디로 바꾸기
+                        params.put("click_news",item.getTitle());
+                        params.put("select_cat","true");
                         return params;
                     }
                 };

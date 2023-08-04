@@ -1,37 +1,92 @@
 package edu.sungshin.newkey;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import java.util.ArrayList;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 public class RecommendFragment extends Fragment {
 
     ArrayList<NewsData> newsList;
+    RequestQueue queue;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView=(ViewGroup) inflater.inflate(R.layout.fragment_recommend, container, false);
+
         newsList=new ArrayList<>();
+        queue=Volley.newRequestQueue(rootView.getContext());
+        String url = "http://44.212.55.152:5000/";
 
-        //Adapter
-        LinearLayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
-        RecyclerView recyclerView=rootView.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(layoutManager);
-        NewsAdapter adapter=new NewsAdapter(rootView.getContext(),newsList);
+        final JsonArrayRequest request=new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                //s3에서 기사 받아와 배열에 저장
+                try {
+                    // 예시: 응답으로부터 필요한 데이터를 파싱하여 처리
+                    for (int i = 0; i < response.length(); i++) {
+                        JSONObject jsonObject = response.getJSONObject(i);
+                        String title = jsonObject.getString("title");
+                        String content = jsonObject.getString("content");
+                        String press = jsonObject.getString("media");
+                        String date = jsonObject.getString("date");
+                        // NewsData 클래스를 사용하여 데이터를 저장하고 리스트에 추가
+                        NewsData newsData = new NewsData(title,content,press,date);
+                        System.out.println(title);
+                        newsList.add(newsData);
 
-        adapter.addItem(new NewsData("13년간 '두물머리' 때문에 추진…양평고속도로 종점이 '양서면'이었던 이유","content1","press1","date1"));
-        adapter.addItem(new NewsData("title2","content2","press2","date2"));
-        adapter.addItem(new NewsData("title3","content3","press3","date3"));
+                        // 이후에 newsList를 사용하여 원하는 처리를 진행
+                        //Adapter
+                        LinearLayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+                        RecyclerView recyclerView=rootView.findViewById(R.id.recyclerView);
+                        recyclerView.setLayoutManager(layoutManager);
+                        NewsAdapter adapter=new NewsAdapter(rootView.getContext(),newsList);
+                        recyclerView.setAdapter(adapter);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println(error);
+            }
+        });
 
-        recyclerView.setAdapter(adapter);
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                1000000,  // 기본 타임아웃 (기본값: 2500ms)
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES, // 기본 재시도 횟수 (기본값: 1)
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        ));
+
+        request.setShouldCache(false);
+        queue.add(request);
 
         return rootView;
     }

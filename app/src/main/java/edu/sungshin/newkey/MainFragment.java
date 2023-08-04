@@ -6,12 +6,33 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.tabs.TabLayout;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainFragment extends Fragment {
 
@@ -25,12 +46,6 @@ public class MainFragment extends Fragment {
 
         politicFragment=new CatPoliticFragment();
         entertainmentFragment=new CatEntertainmentFragment();
-
-        //toolbar=rootView.findViewById(R.id.toolbar);
-        //((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-
-        //ActionBar actionBar=((AppCompatActivity) getActivity()).getSupportActionBar();
-        //actionBar.setDisplayShowTitleEnabled(false);
 
         getChildFragmentManager().beginTransaction().replace(R.id.container,politicFragment).commit();
 
@@ -62,6 +77,5 @@ public class MainFragment extends Fragment {
         });
 
         return rootView;
-
     }
 }
