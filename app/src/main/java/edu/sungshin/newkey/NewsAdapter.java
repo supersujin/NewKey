@@ -9,6 +9,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.AuthFailureError;
@@ -16,11 +20,18 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
@@ -62,6 +73,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.container, new NewsFragment(item));
+                fragmentTransaction.addToBackStack(null); // 뒤로 가기 버튼으로 이전 Fragment로 돌아갈 수 있도록 추가
+                fragmentTransaction.commit();
+
                 //퍼블릭 IPv4 주소
                 String flask_url = "http://44.212.55.152:5000/click";
 
@@ -81,13 +98,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> params = new HashMap<>();
-                        //flask 서버로 전달할 데이터
-                        params.put("user_id","1"); //로그인 아이디로 바꾸기
-                        params.put("click_news",item.getTitle());
-                        params.put("select_cat","true");
+
+                        // String 형태로 데이터 추가
+                        params.put("user_id", "1"); // 로그인 아이디로 바꾸기
+                        params.put("click_news", item.getId());
+                        params.put("select_cat", "100"); // 사용자가 선택한 선호 카테고리로 바꾸기
+
                         return params;
                     }
                 };
+
                 request.setShouldCache(false);
                 queue.add(request);
             }
@@ -115,5 +135,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
             press.setText(item.getPress());
             date.setText(item.getDate());
         }
+
+
     }
 }

@@ -3,7 +3,8 @@ package edu.sungshin.newkey;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class NewsData implements Parcelable {
+public class NewsData{
+    private String id;
     private String title;
     private String content;
     private String press;
@@ -12,11 +13,20 @@ public class NewsData implements Parcelable {
     public NewsData() {
     }
 
-    public NewsData(String title, String content, String press, String date) {
+    public NewsData(String id, String title, String content, String press, String date) {
+        this.id = id;
         this.title = title;
         this.content = content;
         this.press = press;
         this.date = date;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -49,41 +59,5 @@ public class NewsData implements Parcelable {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(title);
-        dest.writeString(content);
-        dest.writeString(press);
-        dest.writeString(date);
-    }
-
-    // Parcelable 인터페이스 구현 메서드들
-    // Creator 객체를 생성하는 역할
-    public static final Creator<NewsData> CREATOR = new Creator<NewsData>() {
-        @Override
-        public NewsData createFromParcel(Parcel in) {
-            return new NewsData(in);
-        }
-
-        @Override
-        public NewsData[] newArray(int size) {
-            return new NewsData[size];
-        }
-    };
-
-    // Parcelable 인터페이스 구현 메서드들
-    // Parcel로부터 객체를 생성하는 역할
-    protected NewsData(Parcel in) {
-        title = in.readString();
-        content = in.readString();
-        press = in.readString();
-        date = in.readString();
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
     }
 }

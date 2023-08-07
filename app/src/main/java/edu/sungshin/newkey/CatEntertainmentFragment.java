@@ -43,12 +43,14 @@ public class CatEntertainmentFragment extends Fragment {
                     // 예시: 응답으로부터 필요한 데이터를 파싱하여 처리
                     for (int i = 0; i < response.length(); i++) {
                         JSONObject jsonObject = response.getJSONObject(i);
+                        String id = jsonObject.getString("id");
                         String title = jsonObject.getString("title");
                         String content = jsonObject.getString("content");
                         String press = jsonObject.getString("media");
                         String date = jsonObject.getString("date");
+
                         // NewsData 클래스를 사용하여 데이터를 저장하고 리스트에 추가
-                        NewsData newsData = new NewsData(title,content,press,date);
+                        NewsData newsData = new NewsData(id,title,content,press,date);
                         System.out.println(title);
                         newsList.add(newsData);
 
