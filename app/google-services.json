@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "889111734676",
+    "project_id": "newkey-e9f3d",
+    "storage_bucket": "newkey-e9f3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889111734676:android:3384c13f95435a93ce0781",
+        "android_client_info": {
+          "package_name": "edu.sungshin.newkey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889111734676-dsdeutc9ckn0q6m10lrn0g4rco9q62v5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5Sh0A4GQr_sRTJ3TD4Ims3Zh5KQKxJdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889111734676-dsdeutc9ckn0q6m10lrn0g4rco9q62v5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

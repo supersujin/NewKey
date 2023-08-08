@@ -37,7 +37,15 @@ import java.util.List;
 public class MainFragment extends Fragment {
 
     CatPoliticFragment politicFragment;
+    CatEconomicFragment economicFragment;
+    CatSocialFragment socialFragment;
+    CatLifeFragment lifeFragment;
+    CatWorldFragment worldFragment;
+    CatItFragment itFragment;
+    CatOpinionFragment opinionFragment;
+    CatSportFragment sportFragment;
     CatEntertainmentFragment entertainmentFragment;
+
     TabLayout tabs;
 
     @Override
@@ -45,12 +53,26 @@ public class MainFragment extends Fragment {
         ViewGroup rootView=(ViewGroup) inflater.inflate(R.layout.fragment_main, container, false);
 
         politicFragment=new CatPoliticFragment();
+        economicFragment=new CatEconomicFragment();
+        socialFragment=new CatSocialFragment();
+        lifeFragment=new CatLifeFragment();
+        worldFragment=new CatWorldFragment();
+        itFragment=new CatItFragment();
+        opinionFragment=new CatOpinionFragment();
+        sportFragment=new CatSportFragment();
         entertainmentFragment=new CatEntertainmentFragment();
 
         getChildFragmentManager().beginTransaction().replace(R.id.container,politicFragment).commit();
 
         tabs=rootView.findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("정치"));
+        tabs.addTab(tabs.newTab().setText("경제"));
+        tabs.addTab(tabs.newTab().setText("사회"));
+        tabs.addTab(tabs.newTab().setText("생활"));
+        tabs.addTab(tabs.newTab().setText("세계"));
+        tabs.addTab(tabs.newTab().setText("IT"));
+        tabs.addTab(tabs.newTab().setText("오"));
+        tabs.addTab(tabs.newTab().setText("스포츠"));
         tabs.addTab(tabs.newTab().setText("연예"));
 
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -61,8 +83,23 @@ public class MainFragment extends Fragment {
                 if(position==0){
                     getChildFragmentManager().beginTransaction().replace(R.id.container,politicFragment).commit();
                 }else if(position==1){
+                    getChildFragmentManager().beginTransaction().replace(R.id.container,economicFragment).commit();
+                }else if(position==2){
+                    getChildFragmentManager().beginTransaction().replace(R.id.container,socialFragment).commit();
+                }else if(position==3){
+                    getChildFragmentManager().beginTransaction().replace(R.id.container,lifeFragment).commit();
+                }else if(position==4){
+                    getChildFragmentManager().beginTransaction().replace(R.id.container,worldFragment).commit();
+                }else if(position==5){
+                    getChildFragmentManager().beginTransaction().replace(R.id.container,itFragment).commit();
+                }else if(position==6){
+                    getChildFragmentManager().beginTransaction().replace(R.id.container,opinionFragment).commit();
+                }else if(position==7){
+                    getChildFragmentManager().beginTransaction().replace(R.id.container,sportFragment).commit();
+                }else if(position==8){
                     getChildFragmentManager().beginTransaction().replace(R.id.container,entertainmentFragment).commit();
                 }
+
             }
 
             @Override
