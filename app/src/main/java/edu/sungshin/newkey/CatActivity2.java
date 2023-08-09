@@ -36,11 +36,11 @@ public class CatActivity2 extends AppCompatActivity {
 
         queue= Volley.newRequestQueue(getApplicationContext());
         catDict = new HashMap<>();
-        catDict.put("wor1",231);catDict.put("wor2",232);catDict.put("wor3",233);catDict.put("wor4",234);catDict.put("wor5",322);
-        catDict.put("it1",731);catDict.put("it2",226);catDict.put("it3",227);catDict.put("it4",230);catDict.put("it5",732);catDict.put("it6",283);catDict.put("it7",229);catDict.put("it8",228);
-        catDict.put("opi1",111);catDict.put("opi2",112);catDict.put("opi3",113);
-        catDict.put("spo1",121);catDict.put("spo2",122);catDict.put("spo3",123);catDict.put("spo4",124);catDict.put("spo5",125);catDict.put("spo6",126);catDict.put("spo7",127);catDict.put("spo8",128);
-        catDict.put("ent1",131);catDict.put("ent2",132);
+        catDict.put("wor1",104231);catDict.put("wor2",104232);catDict.put("wor3",104233);catDict.put("wor4",104234);catDict.put("wor5",104322);
+        catDict.put("it1",105731);catDict.put("it2",105226);catDict.put("it3",105227);catDict.put("it4",105230);catDict.put("it5",105732);catDict.put("it6",105283);catDict.put("it7",105229);catDict.put("it8",105228);
+        catDict.put("opi1",110111);catDict.put("opi2",110112);catDict.put("opi3",110113);
+        catDict.put("spo1",120121);catDict.put("spo2",120122);catDict.put("spo3",120123);catDict.put("spo4",120124);catDict.put("spo5",120125);catDict.put("spo6",120126);catDict.put("spo7",120127);catDict.put("spo8",120128);
+        catDict.put("ent1",130131);catDict.put("ent2",130132);
 
         CheckBox wor1 = (CheckBox) findViewById(R.id.wor1);
         CheckBox wor2 = (CheckBox) findViewById(R.id.wor2);
@@ -117,7 +117,6 @@ public class CatActivity2 extends AppCompatActivity {
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> params = new HashMap<>();
 
-                        // String 형태로 데이터 추가
                         params.put("user_id", userId); // 로그인 아이디로 바꾸기
                         params.put("click_news", "[]");
                         params.put("select_cat", catList.toString()); // 사용자가 선택한 선호 카테고리로 바꾸기

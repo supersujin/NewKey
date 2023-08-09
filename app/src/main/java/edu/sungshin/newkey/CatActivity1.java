@@ -25,10 +25,10 @@ public class CatActivity1 extends AppCompatActivity {
         setContentView(R.layout.activity_cat1);
 
         catDict = new HashMap<>();
-        catDict.put("pol1",264); catDict.put("pol2",265); catDict.put("pol3",268); catDict.put("pol4",266); catDict.put("pol5",267); catDict.put("pol6",269);
-        catDict.put("eco1",259); catDict.put("eco2",258); catDict.put("eco3",261); catDict.put("eco4",771); catDict.put("eco5",260); catDict.put("eco6",262); catDict.put("eco7",310); catDict.put("eco8",263);
-        catDict.put("soc1",249); catDict.put("soc2",250); catDict.put("soc3",251); catDict.put("soc4",254); catDict.put("soc5",252); catDict.put("soc6",596); catDict.put("soc5",255); catDict.put("soc5",256); catDict.put("soc7",276); catDict.put("soc8",257);
-        catDict.put("lif1",241); catDict.put("lif2",239); catDict.put("lif3",240); catDict.put("lif4",237); catDict.put("lif5",238); catDict.put("lif6",376); catDict.put("lif7",242); catDict.put("lif8",243); catDict.put("lif9",244); catDict.put("lif10",248); catDict.put("lif11",245);
+        catDict.put("pol1",100264); catDict.put("pol2",100265); catDict.put("pol3",100268); catDict.put("pol4",100266); catDict.put("pol5",100267); catDict.put("pol6",100269);
+        catDict.put("eco1",101259); catDict.put("eco2",101258); catDict.put("eco3",101261); catDict.put("eco4",101771); catDict.put("eco5",101260); catDict.put("eco6",101262); catDict.put("eco7",101310); catDict.put("eco8",101263);
+        catDict.put("soc1",102249); catDict.put("soc2",102250); catDict.put("soc3",102251); catDict.put("soc4",102254); catDict.put("soc5",102252); catDict.put("soc6",102596); catDict.put("soc5",102255); catDict.put("soc5",102256); catDict.put("soc7",102276); catDict.put("soc8",102257);
+        catDict.put("lif1",103241); catDict.put("lif2",103239); catDict.put("lif3",103240); catDict.put("lif4",103237); catDict.put("lif5",103238); catDict.put("lif6",103376); catDict.put("lif7",103242); catDict.put("lif8",103243); catDict.put("lif9",103244); catDict.put("lif10",103248); catDict.put("lif11",103245);
 
         CheckBox pol1 = (CheckBox) findViewById(R.id.pol1);
         CheckBox pol2 = (CheckBox) findViewById(R.id.pol2);

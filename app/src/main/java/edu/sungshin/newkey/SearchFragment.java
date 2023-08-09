@@ -20,8 +20,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.database.annotations.Nullable;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,9 +50,64 @@ public class SearchFragment extends Fragment {
 
         Button button = rootView.findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
+                final StringRequest request=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("res",response);
+                        JSONArray jsonArray = null;
+                        try {
+                            jsonArray = new JSONArray(response);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            try {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                String id = jsonObject.getString("id");
+                                String title = jsonObject.getString("title");
+                                String content = jsonObject.getString("content");
+                                String press = jsonObject.getString("media");
+                                String date = jsonObject.getString("date");
+
+                                // NewsData 클래스를 사용하여 데이터를 저장하고 리스트에 추가
+                                NewsData newsData = new NewsData(id,title,content,press,date);
+                                System.out.println(title);
+                                newsList.add(newsData);
+
+                                // 이후에 newsList를 사용하여 원하는 처리를 진행
+                                //Adapter
+                                LinearLayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+                                RecyclerView recyclerView=rootView.findViewById(R.id.recyclerView);
+                                recyclerView.setLayoutManager(layoutManager);
+                                NewsAdapter adapter=new NewsAdapter(rootView.getContext(),newsList);
+                                recyclerView.setAdapter(adapter);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println(error);
+                    }
+                }){
+                    //@Nullable
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("keyword", keyword.getText().toString()); // 로그인 아이디로 바꾸기
+                        return params;
+                    }
+                };
+
+                request.setShouldCache(false);
+                queue.add(request);
             }
         });
 

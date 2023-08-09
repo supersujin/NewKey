@@ -41,7 +41,7 @@ public class RecommendFragment extends Fragment {
 
         newsList=new ArrayList<>();
         queue=Volley.newRequestQueue(rootView.getContext());
-        String url = "http://44.212.55.152:5000/";
+        String url = "http://44.212.55.152:5000/recommend";
 
         final JsonArrayRequest request=new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override

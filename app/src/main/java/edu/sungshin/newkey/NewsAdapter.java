@@ -93,7 +93,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> params = new HashMap<>();
-                        params.put("user_id", userId); // 로그인 아이디로 바꾸기
+                        params.put("user_id", userId);
                         params.put("click_news", item.getId());
 
                         return params;
