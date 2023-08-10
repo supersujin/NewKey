@@ -46,7 +46,6 @@ public class RecommendFragment extends Fragment {
         final JsonArrayRequest request=new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                //s3에서 기사 받아와 배열에 저장
                 try {
                     // 예시: 응답으로부터 필요한 데이터를 파싱하여 처리
                     for (int i = 0; i < response.length(); i++) {
