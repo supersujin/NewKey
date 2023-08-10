@@ -5,18 +5,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.Context;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RankAdapter extends RecyclerView.Adapter<RankAdapter.RankViewHolder> {
 
-    private List<RankItem> rankItems;
+    private List<RankItem> items;
 
-    public RankAdapter(List<RankItem> rankItems) {
-        this.rankItems = rankItems;
-    }
+    Context context;
+
+    public RankAdapter(Context context, ArrayList<RankItem> NewsList){ this.context=context; items=NewsList;}
 
     @Override
     public RankViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -26,14 +28,15 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.RankViewHolder
 
     @Override
     public void onBindViewHolder(RankViewHolder holder, int position) {
-        RankItem item = rankItems.get(position);
+        RankItem item = items.get(position);
+        holder.setItem(item);
         holder.button.setText(item.getRank());
         holder.textView.setText(item.getContent());
     }
 
     @Override
     public int getItemCount() {
-        return rankItems.size();
+        return items.size();
     }
 
     static class RankViewHolder extends RecyclerView.ViewHolder {
@@ -42,8 +45,12 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.RankViewHolder
 
         RankViewHolder(View itemView) {
             super(itemView);
-            button = itemView.findViewById(R.id.btm_1st);
-            textView = itemView.findViewById(R.id.text_1st);
+            button = itemView.findViewById(R.id.btn_rank);
+            textView = itemView.findViewById(R.id.text_rank);
+        }
+        public void setItem(RankItem item){
+            button.setText(item.getRank());
+            textView.setText(item.getContent());
         }
     }
 }

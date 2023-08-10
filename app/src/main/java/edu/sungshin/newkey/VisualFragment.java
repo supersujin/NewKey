@@ -1,26 +1,17 @@
 package edu.sungshin.newkey;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import org.json.JSONArray;
-import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.android.volley.AuthFailureError;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,22 +19,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class VisualFragment extends Fragment {
     RequestQueue queue;
     ImageView imageView;
+    ArrayList<RankItem> newsList;
     String imageUrl = "http://44.212.55.152:5000/wordsImage";
     String listUrl = "http://44.212.55.152:5000/wordsList";
 
@@ -53,6 +38,7 @@ public class VisualFragment extends Fragment {
 
         queue = Volley.newRequestQueue(rootView.getContext());
         imageView=rootView.findViewById(R.id.imageView);
+        newsList=new ArrayList<RankItem>();
 
         final JsonArrayRequest listRequest=new JsonArrayRequest(Request.Method.GET, listUrl, null, new Response.Listener<JSONArray>() {
             @Override
@@ -61,7 +47,15 @@ public class VisualFragment extends Fragment {
                     for (int i = 0; i < response.length(); i++) {
                         String item=response.getString(i);
                         System.out.println(item);
+                        RankItem rankItem = new RankItem(Integer.toString(i+1),item); //i+1: rank
+                        newsList.add(rankItem);
                     }
+                    LinearLayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+                    RecyclerView recyclerView=rootView.findViewById(R.id.recyclerView);
+                    recyclerView.setLayoutManager(layoutManager);
+                    RankAdapter adapter=new RankAdapter(rootView.getContext(),newsList);
+                    recyclerView.setAdapter(adapter);
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

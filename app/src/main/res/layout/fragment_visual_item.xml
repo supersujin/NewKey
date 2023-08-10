@@ -6,19 +6,17 @@
     android:gravity="center_vertical">
 
     <Button
-        android:id="@+id/btm_1st"
+        android:id="@+id/btn_rank"
         android:layout_marginLeft="10dp"
         android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:text="1위" />
+        android:layout_height="40dp" />
 
     <TextView
-        android:id="@+id/text_1st"
+        android:id="@+id/text_rank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="10dp"
-        android:text="1위 내용"
         android:textSize="15sp" />
 
 
