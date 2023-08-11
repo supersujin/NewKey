@@ -10,13 +10,13 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="173dp"
         tools:src="@tools:sample/avatars" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="431dp"
+        android:layout_height="541dp"
         android:layout_marginTop="10dp">
 
     </androidx.recyclerview.widget.RecyclerView>
