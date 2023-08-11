@@ -1,19 +1,32 @@
 package edu.sungshin.newkey;
 
-public class NewsData {
-    String title;
-    String content;
-    String press;
-    String date;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class NewsData{
+    private String id;
+    private String title;
+    private String content;
+    private String press;
+    private String date;
 
     public NewsData() {
     }
 
-    public NewsData(String title, String content, String press, String date) {
+    public NewsData(String id, String title, String content, String press, String date) {
+        this.id = id;
         this.title = title;
         this.content = content;
         this.press = press;
         this.date = date;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {

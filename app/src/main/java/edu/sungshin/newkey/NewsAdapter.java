@@ -7,8 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+//import androidx.annotation.NonNull;
+//import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.AuthFailureError;
@@ -18,6 +21,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,9 +48,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     public void setItem(int position, NewsData item){ items.set(position,item); }
 
-    @NonNull
     @Override
-    public NewsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public NewsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
         View itemView=inflater.inflate(R.layout.news_item,parent,false);
         queue=Volley.newRequestQueue(context);
@@ -54,7 +58,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NewsAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(NewsAdapter.ViewHolder holder, int position) {
         NewsData item=items.get(position);
         holder.setItem(item);
 
@@ -62,8 +66,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.container, new NewsFragment(item));
+                fragmentTransaction.addToBackStack(null); // 뒤로 가기 버튼으로 이전 Fragment로 돌아갈 수 있도록 추가
+                fragmentTransaction.commit();
+
                 //퍼블릭 IPv4 주소
                 String flask_url = "http://44.212.55.152:5000/click";
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String userId = user.getUid();
 
                 final StringRequest request=new StringRequest(Request.Method.POST, flask_url, new Response.Listener<String>() {
                     @Override
@@ -77,17 +89,17 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
                         System.out.println(error);
                     }
                 }){
-                    @Nullable
+                    //@Nullable
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> params = new HashMap<>();
-                        //flask 서버로 전달할 데이터
-                        params.put("user","1"); //로그인 아이디로 바꾸기
-                        params.put("title",item.getTitle());
-                        params.put("click","true");
+                        params.put("user_id", userId);
+                        params.put("click_news", item.getId());
+
                         return params;
                     }
                 };
+
                 request.setShouldCache(false);
                 queue.add(request);
             }
