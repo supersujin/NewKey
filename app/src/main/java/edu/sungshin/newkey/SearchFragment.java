@@ -73,9 +73,12 @@ public class SearchFragment extends Fragment {
                                 String content = jsonObject.getString("content");
                                 String press = jsonObject.getString("media");
                                 String date = jsonObject.getString("date");
+                                String img = jsonObject.getString("img");
+                                String summary=jsonObject.getString("summary");
+                                String key=jsonObject.getString("key");
 
                                 // NewsData 클래스를 사용하여 데이터를 저장하고 리스트에 추가
-                                NewsData newsData = new NewsData(id,title,content,press,date);
+                                NewsData newsData = new NewsData(id,title,content,press,date,img,summary,key);
                                 System.out.println(title);
                                 newsList.add(newsData);
 
