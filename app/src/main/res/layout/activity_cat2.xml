@@ -5,28 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".CatActivity1">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginBottom="10dp"
+        android:background="@color/back"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="관심 카테고리를 모두 선택해주세요."
-            android:textSize="20dp"
-            android:layout_margin="10dp"/>
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_margin="5dp"/>
+
 
         <Button
             android:id="@+id/nextButton"
-            android:layout_width="wrap_content"
+            android:layout_width="108dp"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="다음"
-            android:layout_margin="10dp"/>
+            android:background="@drawable/round_button"
+            android:text="다 음"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -34,8 +45,12 @@
         android:id="@+id/world"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="세계"
-        android:textSize="18dp"/>
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/yellow"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="세계" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,22 +60,34 @@
         <CheckBox
             android:id="@+id/wor1"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="아시아/호주" />
 
         <CheckBox
             android:id="@+id/wor2"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="미국/중남미" />
 
         <CheckBox
             android:id="@+id/wor3"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="유럽" />
 
     </LinearLayout>
@@ -74,15 +101,23 @@
         <CheckBox
             android:id="@+id/wor4"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.39"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="중동/아프리카" />
 
         <CheckBox
             android:id="@+id/wor5"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="세계일반" />
     </LinearLayout>
 
@@ -90,8 +125,12 @@
         android:id="@+id/it"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="IT/과학"
-        android:textSize="18dp"/>
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/yellow"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="IT/과학" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -101,22 +140,34 @@
         <CheckBox
             android:id="@+id/it1"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="모바일" />
 
         <CheckBox
             android:id="@+id/it2"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="인터넷/SNS" />
 
         <CheckBox
             android:id="@+id/it3"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="통신/뉴미디어" />
 
     </LinearLayout>
@@ -129,22 +180,34 @@
         <CheckBox
             android:id="@+id/it4"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="IT일반" />
 
         <CheckBox
             android:id="@+id/it5"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="보안/해킹" />
 
         <CheckBox
             android:id="@+id/it6"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="컴퓨터" />
 
     </LinearLayout>
@@ -158,15 +221,23 @@
         <CheckBox
             android:id="@+id/it7"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.39"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="게임/리뷰" />
 
         <CheckBox
             android:id="@+id/it8"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="과학일반" />
 
     </LinearLayout>
@@ -175,8 +246,12 @@
         android:id="@+id/opinion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="오피니언"
-        android:textSize="18dp"/>
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/yellow"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="오피니언" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -187,22 +262,34 @@
         <CheckBox
             android:id="@+id/opi1"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="연재" />
 
         <CheckBox
             android:id="@+id/opi2"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="칼럼" />
 
         <CheckBox
             android:id="@+id/opi3"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="사설" />
 
     </LinearLayout>
@@ -211,8 +298,12 @@
         android:id="@+id/sport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="스포츠"
-        android:textSize="18dp"/>
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/yellow"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="스포츠" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -222,29 +313,45 @@
         <CheckBox
             android:id="@+id/spo1"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="야구" />
 
         <CheckBox
             android:id="@+id/spo2"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="해외야구" />
 
         <CheckBox
             android:id="@+id/spo3"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="축구" />
 
         <CheckBox
             android:id="@+id/spo4"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="해외축구" />
 
     </LinearLayout>
@@ -258,29 +365,45 @@
         <CheckBox
             android:id="@+id/spo5"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="농구" />
 
         <CheckBox
             android:id="@+id/spo6"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="배구" />
 
         <CheckBox
             android:id="@+id/spo7"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="골프" />
 
         <CheckBox
             android:id="@+id/spo8"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="일반" />
 
     </LinearLayout>
@@ -289,8 +412,12 @@
         android:id="@+id/entertain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="연예"
-        android:textSize="18dp"/>
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/yellow"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="연예" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -300,15 +427,23 @@
         <CheckBox
             android:id="@+id/ent1"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="국내" />
 
         <CheckBox
             android:id="@+id/ent2"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="해외" />
 
     </LinearLayout>

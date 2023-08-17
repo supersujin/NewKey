@@ -5,28 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".CatActivity1">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginBottom="10dp"
+        android:background="@color/back"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="관심 카테고리를 모두 선택해주세요."
-            android:textSize="20dp"
-            android:layout_margin="10dp"/>
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_margin="5dp"/>
 
         <Button
             android:id="@+id/nextButton"
-            android:layout_width="wrap_content"
+            android:layout_width="108dp"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="다음"
-            android:layout_margin="10dp"/>
+            android:background="@drawable/round_button"
+            android:text="다 음"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -34,8 +44,12 @@
         android:id="@+id/politic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="정치"
-        android:textSize="18dp"/>
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/yellow"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="정치"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,23 +59,36 @@
         <CheckBox
             android:id="@+id/pol1"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="대통령실" />
 
         <CheckBox
             android:id="@+id/pol2"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="국회/정당" />
 
         <CheckBox
             android:id="@+id/pol3"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="북한" />
+
 
     </LinearLayout>
 
@@ -74,22 +101,34 @@
         <CheckBox
             android:id="@+id/pol4"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="행정" />
 
         <CheckBox
             android:id="@+id/pol5"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="국방/외교" />
 
         <CheckBox
             android:id="@+id/pol6"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="정치일반" />
     </LinearLayout>
 
@@ -97,8 +136,12 @@
         android:id="@+id/economic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="경제"
-        android:textSize="18dp"/>
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/yellow"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="경제" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -108,29 +151,45 @@
         <CheckBox
             android:id="@+id/eco1"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="금융" />
 
         <CheckBox
             android:id="@+id/eco2"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="증권" />
 
         <CheckBox
             android:id="@+id/eco3"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="산업/재계" />
 
         <CheckBox
             android:id="@+id/eco4"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="중기/벤처" />
 
     </LinearLayout>
@@ -144,29 +203,45 @@
         <CheckBox
             android:id="@+id/eco5"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="부동산" />
 
         <CheckBox
             android:id="@+id/eco6"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="글로벌 경제" />
 
         <CheckBox
             android:id="@+id/eco7"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="생활경제" />
 
         <CheckBox
             android:id="@+id/eco8"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="경제일반" />
     </LinearLayout>
 
@@ -174,8 +249,12 @@
         android:id="@+id/social"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="사회"
-        android:textSize="18dp"/>
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/yellow"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="사회" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -184,30 +263,46 @@
 
         <CheckBox
             android:id="@+id/soc1"
-            android:layout_width="52dp"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="사건사고" />
 
         <CheckBox
             android:id="@+id/soc2"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="교육" />
 
         <CheckBox
             android:id="@+id/soc3"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="노동" />
 
         <CheckBox
             android:id="@+id/soc4"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="언론" />
 
     </LinearLayout>
@@ -220,29 +315,45 @@
         <CheckBox
             android:id="@+id/soc5"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="환경" />
 
         <CheckBox
             android:id="@+id/soc6"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="인권/복지" />
 
         <CheckBox
             android:id="@+id/soc7"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="식품/의료" />
 
         <CheckBox
             android:id="@+id/soc8"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="지역" />
 
     </LinearLayout>
@@ -256,15 +367,23 @@
         <CheckBox
             android:id="@+id/soc9"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.205"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="인물" />
 
         <CheckBox
             android:id="@+id/soc10"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="사회일반" />
 
     </LinearLayout>
@@ -274,8 +393,12 @@
         android:id="@+id/life"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="생활/문화"
-        android:textSize="18dp"/>
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/yellow"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="생활/문화" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -285,22 +408,34 @@
         <CheckBox
             android:id="@+id/lif1"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="건강정보" />
 
         <CheckBox
             android:id="@+id/lif2"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="자동차/시승기" />
 
         <CheckBox
             android:id="@+id/lif3"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="도로/교통" />
 
     </LinearLayout>
@@ -313,22 +448,34 @@
         <CheckBox
             android:id="@+id/lif4"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="여행/레저" />
 
         <CheckBox
             android:id="@+id/lif5"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="음식/맛집" />
 
         <CheckBox
             android:id="@+id/lif6"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="패션/뷰티" />
 
     </LinearLayout>
@@ -341,22 +488,34 @@
         <CheckBox
             android:id="@+id/lif7"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="공연/전시" />
 
         <CheckBox
             android:id="@+id/lif8"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="책" />
 
         <CheckBox
             android:id="@+id/lif9"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="종교" />
 
     </LinearLayout>
@@ -369,15 +528,23 @@
         <CheckBox
             android:id="@+id/lif10"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.42"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="날씨" />
 
         <CheckBox
             android:id="@+id/lif11"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:background="@drawable/checkbox_selector"
             android:text="생활문화 일반" />
 
     </LinearLayout>

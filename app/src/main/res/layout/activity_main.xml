@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -27,12 +28,12 @@
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/background_light"
                 android:elevation="1dp"
+                android:background="@color/blue"
                 app:tabGravity="fill"
                 app:tabMode="fixed"
-                app:tabSelectedTextColor="@color/design_default_color_primary_dark"
-                app:tabTextColor="@color/design_default_color_primary">
+                app:tabSelectedTextColor="@color/yellow2"
+                app:tabTextColor="@color/yellow">
             </com.google.android.material.tabs.TabLayout>
 
         </com.google.android.material.appbar.AppBarLayout>

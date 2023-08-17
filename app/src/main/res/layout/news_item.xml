@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/black"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/black"
         app:cardCornerRadius="3dp"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true">
@@ -16,6 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/black"
             android:orientation="vertical">
 
             <TextView
@@ -29,7 +32,8 @@
                 android:inputType="textPersonName"
                 android:text="제목"
                 android:textSize="20dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/press"
@@ -42,7 +46,7 @@
                 android:gravity="start|top"
                 android:text="언론사"
                 android:textSize="14dp"
-             />
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/date"
@@ -55,7 +59,7 @@
                 android:gravity="start|top"
                 android:text="날짜"
                 android:textSize="14dp"
-                />
+                android:textColor="@color/white" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
