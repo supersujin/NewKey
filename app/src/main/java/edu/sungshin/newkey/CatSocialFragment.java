@@ -44,7 +44,7 @@ public class CatSocialFragment extends Fragment {
                         JSONObject jsonObject = response.getJSONObject(i);
                         String id = jsonObject.getString("id");
                         String title = jsonObject.getString("title");
-                        String content = jsonObject.getString("content");
+                        String content = jsonObject.getString("origin_content");
                         String press = jsonObject.getString("media");
                         String date = jsonObject.getString("date");
                         String img = jsonObject.getString("img");

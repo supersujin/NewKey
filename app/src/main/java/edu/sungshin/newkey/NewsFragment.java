@@ -81,6 +81,7 @@ public class NewsFragment extends Fragment {
                 Map<String, String> params = new HashMap<>();
                 params.put("summary",newsData.getSummary());
                 params.put("key",newsData.getKey());
+                params.put("id", newsData.getId());
                 return params;
             }
         };

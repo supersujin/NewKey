@@ -70,7 +70,7 @@ public class SearchFragment extends Fragment {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                                 String id = jsonObject.getString("id");
                                 String title = jsonObject.getString("title");
-                                String content = jsonObject.getString("content");
+                                String content = jsonObject.getString("origin_content");
                                 String press = jsonObject.getString("media");
                                 String date = jsonObject.getString("date");
                                 String img = jsonObject.getString("img");
