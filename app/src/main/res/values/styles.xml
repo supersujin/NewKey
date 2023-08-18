@@ -3,7 +3,13 @@
     <style name="MyTabLayout" parent="Widget.Design.TabLayout">
         <item name="tabTextColor">@android:color/white</item>
         <item name="tabSelectedTextColor">@android:color/white</item>
+
         <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- ActionBar(상단바)의 배경 색상을 변경 -->
+        <item name="android:background">@color/black</item>
+        <!-- 다른 스타일 속성들 추가 가능 -->
     </style>
 </resources>

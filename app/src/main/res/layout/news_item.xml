@@ -25,41 +25,39 @@
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+
                 android:ems="10"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:fontFamily="@font/pretendardmedium"
                 android:inputType="textPersonName"
                 android:text="제목"
+                android:textColor="@color/white"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/press"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="3dp"
                 android:ems="10"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:fontFamily="@font/pretendardmedium"
                 android:gravity="start|top"
                 android:text="언론사"
-                android:textSize="14dp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="14dp" />
 
             <TextView
                 android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="3dp"
                 android:ems="10"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:fontFamily="@font/pretendardmedium"
                 android:gravity="start|top"
                 android:text="날짜"
-                android:textSize="14dp"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="14dp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
