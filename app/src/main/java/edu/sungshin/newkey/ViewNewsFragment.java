@@ -31,7 +31,7 @@ import java.util.Map;
 
 public class ViewNewsFragment extends Fragment {
 
-    String url="http://44.212.55.152:5000/viewNews";
+    String url="http://18.233.147.47:5000/viewNews";
     ArrayList<NewsData> newsList;
     RequestQueue queue;
 

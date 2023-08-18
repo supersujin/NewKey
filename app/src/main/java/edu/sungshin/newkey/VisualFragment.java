@@ -29,8 +29,8 @@ public class VisualFragment extends Fragment {
     RequestQueue queue;
     ImageView imageView;
     ArrayList<RankItem> newsList;
-    String imageUrl = "http://44.212.55.152:5000/wordsImage";
-    String listUrl = "http://44.212.55.152:5000/wordsList";
+    String imageUrl = "http://18.233.147.47:5000/wordsImage";
+    String listUrl = "http://18.233.147.47:5000/wordsList";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -48,7 +48,7 @@ public class RecommendFragment extends Fragment {
         queue=Volley.newRequestQueue(rootView.getContext());
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String userId = user.getUid();
-        String url = "http://44.212.55.152:5000/recommend";
+        String url = "http://18.233.147.47:5000/recommend";
 
         final StringRequest request=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override

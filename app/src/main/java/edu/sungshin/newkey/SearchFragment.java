@@ -46,7 +46,7 @@ public class SearchFragment extends Fragment {
         newsList = new ArrayList<>();
         queue = Volley.newRequestQueue(rootView.getContext());
         keyword = rootView.findViewById(R.id.keyword);
-        String url = "http://44.212.55.152:5000/search";
+        String url = "http://18.233.147.47:5000/search";
 
         Button button = rootView.findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {

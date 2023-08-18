@@ -32,7 +32,7 @@ public class CatItFragment extends Fragment {
 
         newsList=new ArrayList<>();
         queue= Volley.newRequestQueue(rootView.getContext());
-        String url = "http://44.212.55.152:5000/it";
+        String url = "http://18.233.147.47:5000/it";
 
         final JsonArrayRequest request=new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override

@@ -75,7 +75,7 @@ public class CatActivity2 extends AppCompatActivity {
 
         Button nextButton=findViewById(R.id.nextButton);
 
-        String url="http://44.212.55.152:5000/register";
+        String url="http://18.233.147.47:5000/register";
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String userId = user.getUid();
 

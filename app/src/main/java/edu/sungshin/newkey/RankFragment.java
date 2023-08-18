@@ -29,7 +29,7 @@ import java.util.Map;
 public class RankFragment extends Fragment {
     RankItem rankItem;
 
-    String url = "http://44.212.55.152:5000/keyword";
+    String url = "http://18.233.147.47:5000/keyword";
 
     ArrayList<NewsData> newsList;
     RequestQueue queue;

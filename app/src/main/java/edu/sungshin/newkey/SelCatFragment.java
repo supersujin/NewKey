@@ -36,7 +36,7 @@ import java.util.Map;
 
 public class SelCatFragment extends Fragment {
 
-    String url="http://44.212.55.152:5000/selCat";
+    String url="http://18.233.147.47:5000/selCat";
     ArrayList<SelCat> selCatList;
     RequestQueue queue;
 

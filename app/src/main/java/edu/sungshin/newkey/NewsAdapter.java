@@ -73,7 +73,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
                 fragmentTransaction.commit();
 
                 //퍼블릭 IPv4 주소
-                String flask_url = "http://44.212.55.152:5000/click";
+                String flask_url = "http://18.233.147.47:5000/click";
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 String userId = user.getUid();
 

@@ -33,7 +33,7 @@ public class CatPoliticFragment extends Fragment {
 
         newsList=new ArrayList<>();
         queue= Volley.newRequestQueue(rootView.getContext());
-        String url = "http://44.212.55.152:5000/politic";
+        String url = "http://18.233.147.47:5000/politic";
 
         final JsonArrayRequest request=new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override

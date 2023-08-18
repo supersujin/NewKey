@@ -29,12 +29,11 @@ public class NewsFragment extends Fragment {
 
     RequestQueue queue;
     ImageView imageView;
-    TextView what;
     TextView fiveWOneH;
     TextView title;
     TextView content;
     String imageUrl;
-    String fiveWOneHUrl="http://44.212.55.152:5000/5w1h";
+    String fiveWOneHUrl="http://18.233.147.47:5000/5w1h";
     NewsData newsData;
 
     // 기본 생성자 (반드시 필요)
