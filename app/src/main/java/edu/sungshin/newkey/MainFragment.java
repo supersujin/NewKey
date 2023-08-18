@@ -71,7 +71,7 @@ public class MainFragment extends Fragment {
         tabs.addTab(tabs.newTab().setText("생활"));
         tabs.addTab(tabs.newTab().setText("세계"));
         tabs.addTab(tabs.newTab().setText("IT"));
-        tabs.addTab(tabs.newTab().setText("오"));
+        tabs.addTab(tabs.newTab().setText("오피니언"));
         tabs.addTab(tabs.newTab().setText("스포츠"));
         tabs.addTab(tabs.newTab().setText("연예"));
 
