@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:orientation="vertical" >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +18,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:text="my page"
-            android:textColor="@color/black"
+            android:textColor="@color/yellow"
             android:textSize="25dp"
             android:textStyle="bold"/>
 
@@ -51,9 +53,10 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginRight="20dp"
-                    android:text="사용자"
                     android:textStyle="bold"
-                    android:textSize="23dp" />
+                    android:textSize="23dp"
+                    android:textColor="@color/yellow"
+                    android:text="사용자" />
 
                 <TextView
                     android:id="@+id/name"
@@ -61,9 +64,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:text="님의 뉴스"
                     android:textSize="20dp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/yellow"
+                    android:text="님의 뉴스" />
             </LinearLayout>
         </LinearLayout>
 
@@ -84,9 +87,11 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
                 android:background="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="19dp"
+                android:textColor="@color/yellow"
                 android:text="선택한 카테고리"
-                android:textAlignment="textStart"
-                android:textSize="19dp" />
+                android:textAlignment="textStart" />
 
 
             <Button
@@ -96,9 +101,11 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:background="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="19dp"
+                android:textColor="@color/yellow"
                 android:text="클릭한 기사"
-                android:textAlignment="textStart"
-                android:textSize="19dp" />
+                android:textAlignment="textStart" />
 
             <Button
                 android:id="@+id/logout"
@@ -107,9 +114,11 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:background="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="19dp"
+                android:textColor="@color/yellow"
                 android:text="로그아웃"
-                android:textAlignment="textStart"
-                android:textSize="19dp" />
+                android:textAlignment="textStart" />
 
             <Button
                 android:id="@+id/withdrawal"
@@ -118,9 +127,11 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:background="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="19dp"
+                android:textColor="@color/yellow"
                 android:text="회원 탈퇴"
-                android:textAlignment="textStart"
-                android:textSize="19dp" />
+                android:textAlignment="textStart" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

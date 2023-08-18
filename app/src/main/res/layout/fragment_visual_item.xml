@@ -3,14 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="35dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:background="@color/black"
     android:gravity="center_vertical">
 
     <Button
         android:id="@+id/btn_rank"
-        android:layout_marginLeft="10dp"
-        android:layout_width="50dp"
-        android:layout_height="40dp" />
+        android:layout_margin="5dp"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:background="@drawable/round_button"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/text_rank"
@@ -18,7 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="10dp"
-        android:textSize="15sp" />
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 
 
 </LinearLayout>

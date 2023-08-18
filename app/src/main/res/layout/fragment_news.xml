@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".NewsFragment" >
 
     <TextView
@@ -12,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="227dp"
         android:text="육하원칙 요약"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textColor="@color/white"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,7 +32,8 @@
                 android:layout_height="54dp"
                 android:text="제목"
                 android:textSize="20dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
 
             <ImageView
                 android:id="@+id/imageView"
@@ -44,7 +47,8 @@
                 android:layout_height="667dp"
                 android:maxLines="1000"
                 android:text="본문"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
     </ScrollView>

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
+    android:background="@color/black"
     tools:context=".LoginActivity"
     android:orientation="vertical">
 
@@ -14,7 +13,8 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:layout_marginTop="180dp"/>
+        android:layout_marginTop="180dp"
+        android:src="@drawable/newkey" />
 
     <EditText
         android:id="@+id/et_email"
@@ -23,7 +23,9 @@
         android:ems="10"
         android:hint="G메일을 입력하세요"
         android:layout_gravity="center"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
     <EditText
         android:id="@+id/et_pwd"
@@ -32,7 +34,9 @@
         android:ems="10"
         android:hint="비밀번호를 입력하세요"
         android:layout_gravity="center"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"/>
 
     <TextView
         android:id="@+id/pwdHint"
@@ -40,7 +44,9 @@
         android:layout_height="wrap_content"
         android:text="*비밀번호는 숫자,영문자를 섞어 6자리 이상 입력"
         android:layout_gravity="center"
-        android:textSize="11dp"/>
+        android:textSize="11dp"
+        android:textColor="@color/yellow"/>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -53,14 +59,16 @@
             android:id="@+id/btn_login"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FFB200"
+            android:backgroundTint="@color/blue"
+            android:textColor="@android:color/white"
             android:text="로그인"/>
 
         <Button
             android:id="@+id/btn_register"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FFB200"
+            android:backgroundTint="@color/blue"
+            android:textColor="@android:color/white"
             android:text="회원가입"/>
     </LinearLayout>
 
