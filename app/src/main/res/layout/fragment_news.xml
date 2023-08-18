@@ -6,49 +6,61 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/black"
-    tools:context=".NewsFragment" >
+    tools:context=".NewsFragment"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/newsTitle"
+        android:layout_width="363dp"
+        android:layout_height="54dp"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/pretendardmedium"
+        android:text="제목"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/fiveWOneH"
-        android:layout_width="match_parent"
+        android:layout_width="363dp"
         android:layout_height="227dp"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/pretendardmedium"
         android:text="육하원칙 요약"
-        android:textSize="20dp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textSize="18dp" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <LinearLayout
             android:id="@+id/scroll"
             android:layout_width="match_parent"
             android:layout_height="10000dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/newsTitle"
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:text="제목"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
+            android:orientation="vertical"
+            android:gravity="center"
+            >
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="match_parent"
+                android:layout_width="363dp"
                 android:layout_height="147dp"
-                tools:src="@tools:sample/avatars" />
+                tools:src="@tools:sample/avatars"
+                android:layout_margin="10dp"/>
 
             <TextView
                 android:id="@+id/newsContent"
-                android:layout_width="match_parent"
+                android:layout_width="363dp"
                 android:layout_height="667dp"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/pretendardmedium"
                 android:maxLines="1000"
                 android:text="본문"
-                android:textSize="15dp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="15dp" />
 
         </LinearLayout>
     </ScrollView>
