@@ -1,38 +1,13 @@
 package edu.sungshin.newkey;
 
 import android.os.Bundle;
-
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.tabs.TabLayout;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainFragment extends Fragment {
 
@@ -71,7 +46,7 @@ public class MainFragment extends Fragment {
         tabs.addTab(tabs.newTab().setText("생활"));
         tabs.addTab(tabs.newTab().setText("세계"));
         tabs.addTab(tabs.newTab().setText("IT"));
-        tabs.addTab(tabs.newTab().setText("오피니언"));
+        tabs.addTab(tabs.newTab().setText("오피"));
         tabs.addTab(tabs.newTab().setText("스포츠"));
         tabs.addTab(tabs.newTab().setText("연예"));
 

@@ -12,4 +12,13 @@
         <item name="android:background">@color/black</item>
         <!-- 다른 스타일 속성들 추가 가능 -->
     </style>
+    <style name="MyCustomTabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
+    </style>
+
+    <style name="MyCustomTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">10dp</item>
+    </style>
+
+
 </resources>

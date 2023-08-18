@@ -18,7 +18,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:text="my page"
-            android:textColor="@color/yellow"
+            android:textColor="@color/green_main"
             android:textSize="25dp"
             android:textStyle="bold"/>
 
@@ -55,7 +55,7 @@
                     android:layout_marginRight="20dp"
                     android:textStyle="bold"
                     android:textSize="23dp"
-                    android:textColor="@color/yellow"
+                    android:textColor="@color/green_main"
                     android:text="사용자" />
 
                 <TextView
@@ -65,7 +65,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:textSize="20dp"
-                    android:textColor="@color/yellow"
+                    android:textColor="@color/green_main"
                     android:text="님의 뉴스" />
             </LinearLayout>
         </LinearLayout>
@@ -89,7 +89,7 @@
                 android:background="#FFFFFF"
                 android:textStyle="bold"
                 android:textSize="19dp"
-                android:textColor="@color/yellow"
+                android:textColor="@color/green_main"
                 android:text="선택한 카테고리"
                 android:textAlignment="textStart" />
 
@@ -103,7 +103,7 @@
                 android:background="#FFFFFF"
                 android:textStyle="bold"
                 android:textSize="19dp"
-                android:textColor="@color/yellow"
+                android:textColor="@color/green_main"
                 android:text="클릭한 기사"
                 android:textAlignment="textStart" />
 
@@ -116,7 +116,7 @@
                 android:background="#FFFFFF"
                 android:textStyle="bold"
                 android:textSize="19dp"
-                android:textColor="@color/yellow"
+                android:textColor="@color/green_main"
                 android:text="로그아웃"
                 android:textAlignment="textStart" />
 
@@ -129,7 +129,7 @@
                 android:background="#FFFFFF"
                 android:textStyle="bold"
                 android:textSize="19dp"
-                android:textColor="@color/yellow"
+                android:textColor="@color/green_main"
                 android:text="회원 탈퇴"
                 android:textAlignment="textStart" />
         </LinearLayout>
