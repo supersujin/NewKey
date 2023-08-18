@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         ActionBar actionBar=getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
