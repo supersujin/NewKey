@@ -21,23 +21,36 @@
         android:textSize="20dp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/fiveWOneH"
-        android:layout_width="363dp"
-        android:layout_height="227dp"
-        android:layout_margin="10dp"
-        android:fontFamily="@font/pretendardmedium"
-        android:text="육하원칙 요약"
-        android:textColor="@color/white"
-        android:textSize="18dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="196dp">
+
+        <LinearLayout
+            android:id="@+id/scroll1"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fiveWOneH"
+                android:layout_width="363dp"
+                android:layout_height="179dp"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/pretendardmedium"
+                android:text="육하원칙 요약"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </ScrollView>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/scroll"
+            android:id="@+id/scroll2"
             android:layout_width="match_parent"
             android:layout_height="10000dp"
             android:orientation="vertical"

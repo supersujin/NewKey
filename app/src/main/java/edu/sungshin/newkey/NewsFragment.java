@@ -29,6 +29,7 @@ public class NewsFragment extends Fragment {
 
     RequestQueue queue;
     ImageView imageView;
+    TextView what;
     TextView fiveWOneH;
     TextView title;
     TextView content;
@@ -67,7 +68,7 @@ public class NewsFragment extends Fragment {
         final StringRequest fiveWOneHRequest=new StringRequest(Request.Method.POST, fiveWOneHUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                fiveWOneH.setText(response);
+                fiveWOneH.setText("- 무엇을: "+newsData.getKey()+"\n"+response);
             }
         }, new Response.ErrorListener() {
             @Override
