@@ -17,7 +17,7 @@
     </style>
 
     <style name="MyCustomTextAppearance" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">10dp</item>
+        <item name="android:textSize">13dp</item>
     </style>
 
 
