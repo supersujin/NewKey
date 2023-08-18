@@ -1,11 +1,11 @@
 package edu.sungshin.newkey;
 
+import android.os.Bundle;
+import android.view.WindowManager;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.os.Bundle;
-import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         mainFragment=new MainFragment();
         visualFragment=new VisualFragment();
         searchFragment=new SearchFragment();

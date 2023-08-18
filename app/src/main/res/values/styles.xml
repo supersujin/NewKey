@@ -3,5 +3,7 @@
     <style name="MyTabLayout" parent="Widget.Design.TabLayout">
         <item name="tabTextColor">@android:color/white</item>
         <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">false</item>
     </style>
 </resources>
