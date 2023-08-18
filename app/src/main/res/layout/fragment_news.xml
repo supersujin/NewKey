@@ -14,7 +14,7 @@
         android:id="@+id/newsTitle"
         android:layout_width="363dp"
         android:layout_height="54dp"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:fontFamily="@font/pretendardmedium"
         android:text="제목"
         android:textColor="@color/white"
@@ -23,7 +23,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="196dp">
+        android:layout_height="170dp">
 
         <LinearLayout
             android:id="@+id/scroll1"
@@ -35,12 +35,11 @@
             <TextView
                 android:id="@+id/fiveWOneH"
                 android:layout_width="363dp"
-                android:layout_height="179dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/layoutbg"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
                 android:fontFamily="@font/pretendardmedium"
                 android:text="육하원칙 요약"
-                android:textColor="@color/black"
+                android:textColor="@color/yellow"
                 android:textSize="15dp"
                 android:textStyle="bold"/>
         </LinearLayout>
