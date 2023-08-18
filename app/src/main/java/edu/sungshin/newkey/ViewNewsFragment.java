@@ -1,47 +1,63 @@
 package edu.sungshin.newkey;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.DefaultRetryPolicy;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class CatSocialFragment extends Fragment {
+public class ViewNewsFragment extends Fragment {
+
+    String url="http://44.212.55.152:5000/viewNews";
     ArrayList<NewsData> newsList;
     RequestQueue queue;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup rootView=(ViewGroup) inflater.inflate(R.layout.fragment_cat_social, container, false);
+        ViewGroup rootView=(ViewGroup) inflater.inflate(R.layout.fragment_view_news, container, false);
 
-        newsList=new ArrayList<>();
-        queue= Volley.newRequestQueue(rootView.getContext());
-        String url = "http://44.212.55.152:5000/social";
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String userId = user.getUid();
+        newsList = new ArrayList<>();
+        queue = Volley.newRequestQueue(rootView.getContext());
 
-        final JsonArrayRequest request=new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+        final StringRequest request=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
-            public void onResponse(JSONArray response) {
-                //s3에서 기사 받아와 배열에 저장
+            public void onResponse(String response) {
+                Log.d("res",response);
+                JSONArray jsonArray = null;
                 try {
-                    // 예시: 응답으로부터 필요한 데이터를 파싱하여 처리
-                    for (int i = 0; i < response.length(); i++) {
-                        JSONObject jsonObject = response.getJSONObject(i);
+                    jsonArray = new JSONArray(response);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    try {
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
                         String id = jsonObject.getString("id");
                         String title = jsonObject.getString("title");
                         String content = jsonObject.getString("origin_content");
@@ -63,9 +79,9 @@ public class CatSocialFragment extends Fragment {
                         recyclerView.setLayoutManager(layoutManager);
                         NewsAdapter adapter=new NewsAdapter(rootView.getContext(),newsList);
                         recyclerView.setAdapter(adapter);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
             }
         }, new Response.ErrorListener() {
@@ -73,17 +89,18 @@ public class CatSocialFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 System.out.println(error);
             }
-        });
-
-        request.setRetryPolicy(new DefaultRetryPolicy(
-                1000000,  // 기본 타임아웃 (기본값: 2500ms)
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES, // 기본 재시도 횟수 (기본값: 1)
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
-        ));
+        }){
+            //@Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("user_id", userId); // 로그인 아이디로 바꾸기
+                return params;
+            }
+        };
 
         request.setShouldCache(false);
         queue.add(request);
-
         return rootView;
     }
 }

@@ -9,16 +9,22 @@ public class NewsData{
     private String content;
     private String press;
     private String date;
+    private String img;
+    private String summary;
+    private String key;
 
     public NewsData() {
     }
 
-    public NewsData(String id, String title, String content, String press, String date) {
+    public NewsData(String id, String title, String content, String press, String date, String img, String summary, String key) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.press = press;
         this.date = date;
+        this.img = img;
+        this.summary = summary;
+        this.key = key;
     }
 
     public String getId() {
@@ -59,5 +65,25 @@ public class NewsData{
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getImg() { return img; }
+
+    public void setImg(String img) { this.img = img; }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

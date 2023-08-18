@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,8 +23,12 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,23 +46,35 @@ public class RecommendFragment extends Fragment {
 
         newsList=new ArrayList<>();
         queue=Volley.newRequestQueue(rootView.getContext());
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String userId = user.getUid();
         String url = "http://44.212.55.152:5000/recommend";
 
-        final JsonArrayRequest request=new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+        final StringRequest request=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
-            public void onResponse(JSONArray response) {
+            public void onResponse(String response) {
+                Log.d("res",response);
+                JSONArray jsonArray = null;
                 try {
-                    // 예시: 응답으로부터 필요한 데이터를 파싱하여 처리
-                    for (int i = 0; i < response.length(); i++) {
-                        JSONObject jsonObject = response.getJSONObject(i);
+                    jsonArray = new JSONArray(response);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    try {
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
                         String id = jsonObject.getString("id");
                         String title = jsonObject.getString("title");
-                        String content = jsonObject.getString("content");
+                        String content = jsonObject.getString("origin_content");
                         String press = jsonObject.getString("media");
                         String date = jsonObject.getString("date");
+                        String img = jsonObject.getString("img");
+                        String summary=jsonObject.getString("summary");
+                        String key=jsonObject.getString("key");
 
                         // NewsData 클래스를 사용하여 데이터를 저장하고 리스트에 추가
-                        NewsData newsData = new NewsData(id,title,content,press,date);
+                        NewsData newsData = new NewsData(id,title,content,press,date,img,summary,key);
                         System.out.println(title);
                         newsList.add(newsData);
 
@@ -68,9 +85,9 @@ public class RecommendFragment extends Fragment {
                         recyclerView.setLayoutManager(layoutManager);
                         NewsAdapter adapter=new NewsAdapter(rootView.getContext(),newsList);
                         recyclerView.setAdapter(adapter);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
             }
         }, new Response.ErrorListener() {
@@ -78,17 +95,24 @@ public class RecommendFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 System.out.println(error);
             }
-        });
+        }){
+            //@Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("user_id",userId); // 로그인 아이디로 바꾸기
+                return params;
+            }
+        };
 
         request.setRetryPolicy(new DefaultRetryPolicy(
-                1000000,  // 기본 타임아웃 (기본값: 2500ms)
+                100000000,  // 기본 타임아웃 (기본값: 2500ms)
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES, // 기본 재시도 횟수 (기본값: 1)
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
         ));
 
         request.setShouldCache(false);
         queue.add(request);
-
         return rootView;
     }
 }

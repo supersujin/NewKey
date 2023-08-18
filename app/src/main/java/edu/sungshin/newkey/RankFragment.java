@@ -1,6 +1,7 @@
 package edu.sungshin.newkey;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,45 +39,56 @@ public class RankFragment extends Fragment {
     }
 
     public RankFragment(RankItem rankItem) {
-        this.rankItem = rankItem;
+        this.rankItem= rankItem;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_rank, container, false);
-        keyword = rankItem.getContent();
+        ViewGroup rootView=(ViewGroup) inflater.inflate(R.layout.fragment_rank, container, false);
+
+        keyword=rankItem.getContent();
 
         newsList = new ArrayList<>();
         queue = Volley.newRequestQueue(rootView.getContext());
 
-        // RecyclerView와 어댑터 초기화
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(layoutManager);
-        NewsAdapter adapter = new NewsAdapter(rootView.getContext(), newsList);
-        recyclerView.setAdapter(adapter);
-
-        final StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        final StringRequest request=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() { //서버로 키워드를 전달하면서 요청을 보내는 키워드
             @Override
             public void onResponse(String response) {
+                Log.d("res",response);
+                JSONArray jsonArray = null;
                 try {
-                    JSONArray jsonArray = new JSONArray(response);
+                    jsonArray = new JSONArray(response);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
-                    for (int i = 0; i < jsonArray.length(); i++) {
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    try {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         String id = jsonObject.getString("id");
                         String title = jsonObject.getString("title");
-                        String content = jsonObject.getString("content");
+                        String content = jsonObject.getString("origin_content");
                         String press = jsonObject.getString("media");
                         String date = jsonObject.getString("date");
+                        String img = jsonObject.getString("img");
+                        String summary=jsonObject.getString("summary");
+                        String key=jsonObject.getString("key");
 
-                        NewsData newsData = new NewsData(id, title, content, press, date);
+                        // NewsData 클래스를 사용하여 데이터를 저장하고 리스트에 추가
+                        NewsData newsData = new NewsData(id,title,content,press,date,img,summary,key);
+                        System.out.println(title);
                         newsList.add(newsData);
-                    }
 
-                    adapter.notifyDataSetChanged(); // 데이터 변경 알림
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                        // 이후에 newsList를 사용하여 원하는 처리를 진행
+                        //Adapter
+                        LinearLayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+                        RecyclerView recyclerView=rootView.findViewById(R.id.recyclerView);
+                        recyclerView.setLayoutManager(layoutManager);
+                        NewsAdapter adapter=new NewsAdapter(rootView.getContext(),newsList);
+                        recyclerView.setAdapter(adapter);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }, new Response.ErrorListener() {
@@ -84,11 +96,12 @@ public class RankFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 System.out.println(error);
             }
-        }) {
+        }){
+            //@Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("keyword", keyword);
+                params.put("keyword", keyword); // 로그인 아이디로 바꾸기
                 return params;
             }
         };
