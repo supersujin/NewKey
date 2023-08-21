@@ -660,6 +660,7 @@ class ChatGPT:
         return result
 
 
+#육하원칙 추출
 @app.route('/5w1h',methods=['POST'])
 def fiveWOneH():
     newsId = request.form['id']
