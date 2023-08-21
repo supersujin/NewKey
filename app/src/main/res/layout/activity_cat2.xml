@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".CatActivity1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/back2"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="관심 카테고리를 모두 선택해주세요."
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/world"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/back2"
+        android:fontFamily="@font/pretendardmedium"
+        android:gravity="center"
+        android:text="세계"
+        android:textColor="@color/green_main"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/wor1"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="아시아/호주"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/wor2"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="미국/중남미"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <CheckBox
+            android:id="@+id/wor3"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="유럽"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/wor4"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="중동/아프리카"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/wor5"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="세계일반"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/it"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/back2"
+        android:fontFamily="@font/pretendardmedium"
+        android:gravity="center"
+        android:text="IT/과학"
+        android:textColor="@color/green_main"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/it1"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="모바일"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/it2"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="인터넷/SNS"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/it3"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="통신/뉴미디어"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/it4"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="IT일반"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/it5"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="보안/해킹"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/it6"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="컴퓨터"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/it7"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="게임/리뷰"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/it8"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="과학일반"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/opinion"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/back2"
+        android:fontFamily="@font/pretendardmedium"
+        android:gravity="center"
+        android:text="오피니언"
+        android:textColor="@color/green_main"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/opi1"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="연재"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/opi2"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="칼럼"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/opi3"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="사설"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sport"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/back2"
+        android:fontFamily="@font/pretendardmedium"
+        android:gravity="center"
+        android:text="스포츠"
+        android:textColor="@color/green_main"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/spo1"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="야구"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/spo2"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="해외야구"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/spo3"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="축구"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/spo4"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="해외축구"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/spo5"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="농구"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/spo6"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="배구"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/spo7"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="골프"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/spo8"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="일반"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/entertain"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/back2"
+        android:fontFamily="@font/pretendardmedium"
+        android:gravity="center"
+        android:text="연예"
+        android:textColor="@color/green_main"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/ent1"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="국내"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/ent2"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/checkbox_selector"
+            android:button="@null"
+            android:fontFamily="@font/pretendardmedium"
+            android:gravity="center"
+            android:text="해외"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/round_button"
+        android:fontFamily="@font/pretendardmedium"
+        android:text="다 음"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</LinearLayout>
